@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Property Listing</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome (optional for icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * { box-sizing: border-box; }
+        body {
+          margin: 0;
+          font-family: 'Roboto', sans-serif;
+          background: #f1f4f8;
+          color: #333;
+          line-height: 1.6;
+        }
+        header {
+          background: #2c3e50;
+          color: #fff;
+          padding: 20px;
+          text-align: center;
+        }
+        header h1 {
+          margin: 0;
+          font-size: 2em;
+          letter-spacing: 1px;
+        }
+        .container {
+          width: 90%;
+          max-width: 1000px;
+          margin: 30px auto;
+          background: #fff;
+          border-radius: 8px;
+          box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+          overflow: hidden;
+        }
+        .tabs {
+          display: flex;
+          background: #34495e;
+        }
+        .tabs button {
+          flex: 1;
+          padding: 15px;
+          background: none;
+          border: none;
+          color: #fff;
+          font-size: 16px;
+          cursor: pointer;
+          transition: background 0.3s;
+        }
+        .tabs button:hover,
+        .tabs button.active {
+          background: #2c3e50;
+        }
+        .tab-content {
+          padding: 20px;
+          display: none;
+          animation: fadeIn 0.5s ease-in-out;
+        }
+        .tab-content.active {
+          display: block;
+        }
+        @keyframes fadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+        /* Summary text formatting */
+        .summary-text {
+          white-space: pre-line;
+          font-size: 16px;
+        }
+        hr {
+          border: none;
+          border-top: 1px solid #ddd;
+          margin: 20px 0;
+        }
+        /* Detailed Listing styling */
+        .detailed ul {
+          list-style: disc;
+          margin-left: 20px;
+        }
+        .detailed ul li {
+          margin-bottom: 6px;
+        }
+        /* Photo Gallery */
+        .photo-gallery {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 15px;
+          justify-content: center;
+        }
+        .photo-gallery img {
+          width: calc(50% - 15px);
+          border-radius: 8px;
+          box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        @media (max-width: 600px) {
+          .photo-gallery img {
+            width: 100%;
+          }
+        }
+        /* Map Styling */
+        .map-iframe {
+          width: 100%;
+          height: 450px;
+          border: none;
+          border-radius: 8px;
+        }
+        .tab-footer {
+          text-align: center;
+          font-size: 14px;
+          color: #666;
+          margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Property Listing</h1>
+    <p>Spacious 4-Bedroom Home on a Large Corner Lot</p>
+</header>
+
+<div class="container">
+    <div class="tabs">
+        <button class="tablink active" onclick="openTab(event, 'Summary')">Summary</button>
+        <button class="tablink" onclick="openTab(event, 'Detailed')">Detailed Listing</button>
+        <button class="tablink" onclick="openTab(event, 'Photos')">Photos</button>
+        <button class="tablink" onclick="openTab(event, 'Map')">Map</button>
+    </div>
+
+    <!-- Summary Tab -->
+    <div id="Summary" class="tab-content active">
+        <div class="summary-text">
+            This stunning 2-story home sits on a spacious 0.75-acre corner lot offering over 3,100 sq. ft. of living
+            space with 4 generous bedrooms (all upstairs), 2 full bathrooms upstairs, and 2 half bathrooms downstairs.
+            It features a massive living room, a cozy family room with a wood-burning fireplace perfect for winter
+            nights, and a formal dining room ideal for entertaining. The well-appointed kitchen boasts Corian
+            countertops, a huge pantry, and tile backsplash, while the owner’s suite offers an updated bath,
+            wood-burning fireplace, sitting area, and a private balcony with scenic views.
+
+            --------------------------------------------------------------------------------
+
+            Additional highlights include first-floor laundry, a dedicated office space by the garage, and smart home
+            upgrades such as a Kwikset smart lock, Ring Doorbell, Ring floodlight, plus a solar-powered Ring camera and
+            light in the backyard.
+
+            --------------------------------------------------------------------------------
+
+            Outside, enjoy a beautifully landscaped yard with a paver patio on a slab foundation (no basement) for easy
+            maintenance. Ideally located within walking distance to Stubbs Park—nearly complete with renovated amenities
+            including a disc golf course, plentiful playgrounds, and the return of its beloved summer concert series—as
+            well as a soon-to-open pickleball facility, Kroger, pharmacy, primary care clinic (opened in 2023),
+            elementary school, and library, this home perfectly combines modern convenience with community charm.
+        </div>
+    </div>
+
+    <!-- Detailed Listing Tab -->
+    <div id="Detailed" class="tab-content detailed">
+        <h2>Spacious 4-Bedroom Home Near Park, Shopping & Schools!</h2>
+        <p><strong>Prime Location Near Stubbs Park & Local Amenities</strong></p>
+        <p>
+            This beautiful 2-story home offers over 3,100 sq. ft. of living space on a stunning, parklike lot in a
+            highly sought-after neighborhood!
+        </p>
+        <hr>
+        <h3>Interior Features</h3>
+        <ul>
+            <li>Open floor plan with abundant natural light</li>
+            <li>Massive living room perfect for entertaining</li>
+            <li>Family room with a wood-burning fireplace—used frequently in winter for cozy nights</li>
+            <li>Formal dining room ideal for gatherings</li>
+            <li>Spacious kitchen with Corian countertops, huge pantry, ample cabinetry & tile backsplash</li>
+            <li>First-floor laundry/utility room for added convenience</li>
+            <li>Dedicated office space adjacent to the garage—ideal for hobbies or automotive projects</li>
+            <li>Bedrooms & Bathrooms:
+                <ul>
+                    <li>4 spacious bedrooms upstairs with generous closet space</li>
+                    <li>2 full bathrooms upstairs (including an updated ensuite in the owner’s suite)</li>
+                    <li>2 half bathrooms downstairs for guests and everyday convenience</li>
+                </ul>
+            </li>
+            <li>Owner’s suite with updated bath, wood-burning fireplace, sitting area, and private balcony with scenic
+                views
+            </li>
+        </ul>
+        <hr>
+        <h3>Smart Home Features</h3>
+        <ul>
+            <li>Kwikset Smart Lock for keyless entry</li>
+            <li>Ring Doorbell for added security and convenience</li>
+            <li>Ring Floodlight in the backyard for enhanced nighttime visibility</li>
+            <li>Solar-powered Ring Camera & Light in the backyard for additional security</li>
+        </ul>
+        <hr>
+        <h3>Exterior & Location</h3>
+        <ul>
+            <li>Beautifully landscaped yard with a paver patio—perfect for relaxing!</li>
+            <li>Built on a slab—no basement for easy maintenance</li>
+            <li>Located near Stubbs Park, currently undergoing renovations to include an upgraded amphitheater, event
+                plaza, enhanced walking trails & weekly concerts
+            </li>
+            <li>Walking distance to:
+                <ul>
+                    <li>Kroger, pharmacy & primary care clinic (opened in 2023)</li>
+                    <li>Elementary school & local library</li>
+                </ul>
+            </li>
+            <li>New pickleball facility opening nearby—great for sports enthusiasts!</li>
+            <li>Additional Update: New electrical breaker box (2020)</li>
+        </ul>
+        <hr>
+        <p style="text-align:center;"><strong>📞 Don’t miss this incredible opportunity—schedule your showing
+            today!</strong></p>
+    </div>
+
+    <!-- Photos Tab -->
+    <div id="Photos" class="tab-content">
+        <div class="photo-gallery">
+            <img src="./photos/living-room.jpg" alt="Living Room">
+            <img src="./photos/kitchen.jpg" alt="Kitchen">
+            <img src="./photos/owners-suite.jpg" alt="Owner’s Suite">
+            <img src="./photos/backyard.jpg" alt="Backyard">
+        </div>
+        <div class="tab-footer">Photo Gallery coming soon...</div>
+    </div>
+
+    <!-- Map Tab -->
+    <div id="Map" class="tab-content">
+        <h2 style="text-align:center; margin-bottom:15px;">Local Amenities Map</h2>
+        <!-- Embed your custom Google Map with your pins -->
+        <iframe class="map-iframe"
+                src="https://www.google.com/maps/d/embed?mid=1LszC0SHP7OTqTX9cpEgyUOv4EZRHE2Y"
+                allowfullscreen>
+        </iframe>
+        <div class="tab-footer">
+            Map includes Stubbs Park, Kroger, pharmacy, primary care clinic, elementary school, library, and the
+            upcoming pickleball facility.
+        </div>
+    </div>
+</div>
+
+<script>
+    function openTab(evt, tabName) {
+      const tabContents = document.getElementsByClassName("tab-content");
+      const buttons = document.querySelectorAll(".tabs button");
+      // Hide all tab contents
+      for (let i = 0; i < tabContents.length; i++) {
+        tabContents[i].classList.remove("active");
+      }
+      // Remove active class from all buttons
+      buttons.forEach(btn => btn.classList.remove("active"));
+      // Show the selected tab and mark the button as active
+      document.getElementById(tabName).classList.add("active");
+      evt.currentTarget.classList.add("active");
+    }
+</script>
+
+</body>
+</html>
